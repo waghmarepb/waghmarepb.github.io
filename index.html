@@ -3,119 +3,290 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pradip Waghmare | Senior Frontend Developer</title>
-    <link rel="stylesheet" href="styles.css">
-    <!-- AOS Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Pradip Waghmare - Senior Frontend Developer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        :root {
+            --primary-color: #fe5632;
+            --text-color: #333;
+            --bg-color: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: var(--bg-color);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 80px;
+        }
+        
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease-out 0.5s both;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+            animation: fadeInUp 1s ease-out 1s both;
+        }
+        
+        .cta-button:hover {
+            background-color: #e64a2e;
+        }
+        
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--primary-color);
+        }
+        
+        .about-content, .experience-item, .project-item {
+            margin-bottom: 30px;
+            animation: fadeIn 1s ease-out;
+        }
+        
+        .experience-item h3, .project-item h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .experience-item p, .project-item p {
+            margin-bottom: 10px;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .tech-tag {
+            background-color: #f0f0f0;
+            color: var(--text-color);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
 </head>
-<body class="dark-theme">
-    <!-- Sidebar Navigation -->
-    <aside id="sidebar">
-        <div class="profile">
-            <h2>Pradip Waghmare</h2>
-            <p>Senior Frontend Developer</p>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <h1>PW</h1>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </aside>
+    </header>
 
-    <!-- Main Content -->
-    <main id="main-content">
-        <!-- Hero Section -->
-        <section id="hero" data-aos="fade-up">
-            <h1>Pradip Waghmare</h1>
-            <p>Senior Frontend Developer with 10+ years of experience</p>
-            <a href="#projects" class="btn">View Projects</a>
-        </section>
-
-        <!-- About Me Section -->
-        <section id="about" data-aos="fade-right">
-            <h2>About Me</h2>
-            <div class="card">
-                <p>Professional and skilled software developer with over 10 years of experience. Expert in frontend technologies like Angular, JavaScript, and HTML5, with deep knowledge of blockchain and cryptocurrency platforms.</p>
-                <h3>Education</h3>
-                <ul>
-                    <li>MCA, University of Pune</li>
-                    <li>BCA, University of Pune</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Experience Section -->
-        <section id="experience" data-aos="fade-left">
-            <h2>Experience</h2>
-            <div class="card">
-                <h3>Senior Software Developer</h3>
-                <p>Blockchain Solutions Network | Nov 2021 - Present</p>
-                <ul>
-                    <li>Leading a team of 8 developers on a cryptocurrency exchange platform</li>
-                    <li>Frontend development using Angular and JavaScript</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3>Software Developer</h3>
-                <p>Angular Minds Pvt Ltd | Apr 2019 - Nov 2021</p>
-                <ul>
-                    <li>Frontend development with Angular and team collaboration</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" data-aos="fade-up">
-            <h2>Projects</h2>
-            <div class="card">
-                <h3>IXFI Cryptocurrency Exchange</h3>
-                <p>Role: Angular Developer | Team Leader</p>
-                <a href="https://ixfi.com" target="_blank">View Project</a>
-            </div>
-            <div class="card">
-                <h3>CRM - Vehicle Showroom</h3>
-                <p>Role: Full Stack Developer | PWA for vehicle management</p>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills" data-aos="fade-right">
-            <h2>Skills</h2>
-            <div class="card">
-                <ul>
-                    <li>Angular, HTML5, CSS3, JavaScript</li>
-                    <li>MongoDB, Git, Jira, Bitbucket</li>
-                    <li>Project and Team Management</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" data-aos="fade-up">
-            <h2>Contact Me</h2>
-            <div class="card">
-                <p>Email: <a href="mailto:waghmarepb@outlook.com">waghmarepb@outlook.com</a></p>
-                <p>Phone: +91 9284362638</p>
-                <div class="social-links">
-                    <a href="https://linkedin.com/in/waghmarepb" target="_blank">LinkedIn</a>
-                    <a href="https://github.com/waghmarepb" target="_blank">GitHub</a>
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Pradip Waghmare</h1>
+                    <p>Senior Frontend Developer with 10+ years of experience in niche and disruptive technologies</p>
+                    <a href="#" class="cta-button">Download Resume</a>
                 </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-content">
+                    <p>With over 10 years of experience in web development, I specialize in creating robust and scalable frontend solutions. My expertise lies in Angular, JavaScript, and blockchain technologies. I'm passionate about leading teams and driving innovation in niche and disruptive technologies.</p>
+                    <h3>Education</h3>
+                    <ul>
+                        <li>Masters in Computer Application - Pune University</li>
+                        <li>Bachelor in Computer Application - Pune University</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="section">
+            <div class="container">
+                <h2 class="section-title">Experience</h2>
+                <div class="experience-item">
+                    <h3>Senior Software Developer</h3>
+                    <p>Blockchain Solutions Network - Current Role</p>
+                    <ul>
+                        <li>Lead frontend development for blockchain-based projects</li>
+                        <li>Implement complex user interfaces using Angular and modern JavaScript</li>
+                        <li>Collaborate with cross-functional teams to deliver high-quality software solutions</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <h3>Software Developer</h3>
+                    <p>Angular Minds</p>
+                    <ul>
+                        <li>Developed and maintained large-scale Angular applications</li>
+                        <li>Optimized application performance and user experience</li>
+                        <li>Mentored junior developers and conducted code reviews</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <div class="container">
+                <h2 class="section-title">Projects</h2>
+                <div class="project-item">
+                    <h3>IXFI - Cryptocurrency Exchange Platform</h3>
+                    <p>Led the frontend development of a comprehensive cryptocurrency exchange platform, enabling users to trade, manage wallets, and track market trends.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Angular</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">WebSocket</span>
+                        <span class="tech-tag">RESTful APIs</span>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <h3>CRM - Vehicle Showroom</h3>
+                    <p>Developed a comprehensive CRM system for vehicle sales and purchase management, streamlining operations for automotive dealerships.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Angular</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">Express.js</span>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <h3>COVID-19 Tracker</h3>
+                    <p>Created a mobile application to track and visualize COVID-19 statistics globally, providing real-time updates and historical data.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Flutter</span>
+                        <span class="tech-tag">Dart</span>
+                        <span class="tech-tag">RESTful APIs</span>
+                        <span class="tech-tag">Firebase</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <div class="container">
+                <h2 class="section-title">Skills</h2>
+                <!-- Skills content will go here -->
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 class="section-title">Contact</h2>
+                <!-- Contact content will go here -->
             </div>
         </section>
     </main>
 
-    <!-- AOS Library Script -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <footer>
+        <div class="container">
+            <!-- Footer content will go here -->
+        </div>
+    </footer>
+
     <script>
-        AOS.init({
-            duration: 1200, 
-            once: true
-        });
+        // JavaScript for smooth scrolling and other interactive elements will go here
     </script>
 </body>
 </html>
