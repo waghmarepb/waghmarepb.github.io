@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+h1, h2, h3 {
+    color: #fe5632;
+    text-align: center;
+}
+
+p {
+    text-align: center;
+    color: #333;
+}
+
+#hero {
+    background: #fff;
+    color: #333;
+    padding: 60px 0;
+    text-align: center;
+}
+
+#hero .btn {
+    background: #fe5632;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+#about, #experience, #projects, #skills, #contact {
+    padding: 40px 0;
+    background-color: #f4f4f4;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+    text-align: center;
+}
+
+.job, .project {
+    margin: 20px 0;
+}
+
+.project a {
+    color: #fe5632;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.social-links a {
+    display: inline-block;
+    margin-right: 10px;
+    color: #333;
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    color: #fe5632;
+}
+
+#contact p {
+    font-size: 18px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+    }
+}
