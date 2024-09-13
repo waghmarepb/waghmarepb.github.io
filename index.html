@@ -7,35 +7,52 @@
     <link rel="stylesheet" href="styles.css">
     <!-- AOS Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body>
-    <!-- Hero Section -->
-    <section id="hero" data-aos="fade-up">
-        <div class="container">
+<body class="dark-theme">
+    <!-- Sidebar Navigation -->
+    <aside id="sidebar">
+        <div class="profile">
+            <h2>Pradip Waghmare</h2>
+            <p>Senior Frontend Developer</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section id="hero" data-aos="fade-up">
             <h1>Pradip Waghmare</h1>
             <p>Senior Frontend Developer with 10+ years of experience</p>
             <a href="#projects" class="btn">View Projects</a>
-        </div>
-    </section>
+        </section>
 
-    <!-- About Me Section -->
-    <section id="about" data-aos="fade-right">
-        <div class="container">
+        <!-- About Me Section -->
+        <section id="about" data-aos="fade-right">
             <h2>About Me</h2>
-            <p>Professional and skilled software developer with 10+ years of experience in niche and disruptive technologies. Proficient in frontend technologies like Angular, JavaScript, and HTML5, with expertise in blockchain and cryptocurrency platforms.</p>
-            <h3>Education</h3>
-            <ul>
-                <li>MCA, University of Pune</li>
-                <li>BCA, University of Pune</li>
-            </ul>
-        </div>
-    </section>
+            <div class="card">
+                <p>Professional and skilled software developer with over 10 years of experience. Expert in frontend technologies like Angular, JavaScript, and HTML5, with deep knowledge of blockchain and cryptocurrency platforms.</p>
+                <h3>Education</h3>
+                <ul>
+                    <li>MCA, University of Pune</li>
+                    <li>BCA, University of Pune</li>
+                </ul>
+            </div>
+        </section>
 
-    <!-- Experience Section -->
-    <section id="experience" data-aos="fade-left">
-        <div class="container">
+        <!-- Experience Section -->
+        <section id="experience" data-aos="fade-left">
             <h2>Experience</h2>
-            <div class="job">
+            <div class="card">
                 <h3>Senior Software Developer</h3>
                 <p>Blockchain Solutions Network | Nov 2021 - Present</p>
                 <ul>
@@ -43,63 +60,61 @@
                     <li>Frontend development using Angular and JavaScript</li>
                 </ul>
             </div>
-            <div class="job">
+            <div class="card">
                 <h3>Software Developer</h3>
                 <p>Angular Minds Pvt Ltd | Apr 2019 - Nov 2021</p>
                 <ul>
                     <li>Frontend development with Angular and team collaboration</li>
                 </ul>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Projects Section -->
-    <section id="projects" data-aos="fade-up">
-        <div class="container">
+        <!-- Projects Section -->
+        <section id="projects" data-aos="fade-up">
             <h2>Projects</h2>
-            <div class="project">
+            <div class="card">
                 <h3>IXFI Cryptocurrency Exchange</h3>
                 <p>Role: Angular Developer | Team Leader</p>
                 <a href="https://ixfi.com" target="_blank">View Project</a>
             </div>
-            <div class="project">
+            <div class="card">
                 <h3>CRM - Vehicle Showroom</h3>
                 <p>Role: Full Stack Developer | PWA for vehicle management</p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Skills Section -->
-    <section id="skills" data-aos="fade-right">
-        <div class="container">
+        <!-- Skills Section -->
+        <section id="skills" data-aos="fade-right">
             <h2>Skills</h2>
-            <ul>
-                <li>Angular, HTML5, CSS3, JavaScript</li>
-                <li>MongoDB, Git, Jira, Bitbucket</li>
-                <li>Project and Team Management</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" data-aos="fade-up">
-        <div class="container">
-            <h2>Contact Me</h2>
-            <p>Email: <a href="mailto:waghmarepb@outlook.com">waghmarepb@outlook.com</a></p>
-            <p>Phone: +91 9284362638</p>
-            <div class="social-links">
-                <a href="https://linkedin.com/in/waghmarepb" target="_blank">LinkedIn</a>
-                <a href="https://github.com/waghmarepb" target="_blank">GitHub</a>
+            <div class="card">
+                <ul>
+                    <li>Angular, HTML5, CSS3, JavaScript</li>
+                    <li>MongoDB, Git, Jira, Bitbucket</li>
+                    <li>Project and Team Management</li>
+                </ul>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" data-aos="fade-up">
+            <h2>Contact Me</h2>
+            <div class="card">
+                <p>Email: <a href="mailto:waghmarepb@outlook.com">waghmarepb@outlook.com</a></p>
+                <p>Phone: +91 9284362638</p>
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/waghmarepb" target="_blank">LinkedIn</a>
+                    <a href="https://github.com/waghmarepb" target="_blank">GitHub</a>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- AOS Library Script -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({
-            duration: 1200, // Animation duration in ms
-            once: true // Run animation only once
+            duration: 1200, 
+            once: true
         });
     </script>
 </body>
