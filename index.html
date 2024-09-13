@@ -7,10 +7,17 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
         
-        :root {
+       :root {
             --primary-color: #fe5632;
             --text-color: #333;
             --bg-color: #ffffff;
+            --secondary-bg: #f9f9f9;
+        }
+
+        [data-theme="dark"] {
+            --text-color: #f0f0f0;
+            --bg-color: #1a1a1a;
+            --secondary-bg: #2c2c2c;
         }
         
         * {
@@ -144,6 +151,159 @@
             border-radius: 20px;
             font-size: 0.9rem;
         }
+         .theme-switch-wrapper {
+            display: flex;
+            align-items: center;
+        }
+
+        .theme-switch {
+            display: inline-block;
+            height: 34px;
+            position: relative;
+            width: 60px;
+        }
+
+        .theme-switch input {
+            display: none;
+        }
+
+        .slider {
+            background-color: #ccc;
+            bottom: 0;
+            cursor: pointer;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            background-color: #fff;
+            bottom: 4px;
+            content: "";
+            height: 26px;
+            left: 4px;
+            position: absolute;
+            transition: .4s;
+            width: 26px;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: var(--primary-color);
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+
+        .testimonials {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 20px;
+            padding: 20px 0;
+        }
+
+        .testimonial {
+            scroll-snap-align: start;
+            background-color: var(--secondary-bg);
+            border-radius: 8px;
+            padding: 20px;
+            min-width: 300px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .testimonial p {
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+            .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .skill-category {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            width: calc(50% - 10px);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .skill-category h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .skill-item {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .contact-info {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .contact-info p {
+            margin-bottom: 10px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            color: var(--primary-color);
+            font-size: 24px;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: #e64a2e;
+        }
+        
+        @media (max-width: 768px) {
+            .skill-category {
+                width: 100%;
+            }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .hero-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            animation: float 6s ease-in-out infinite;
+        }
         
         @keyframes fadeInUp {
             from {
@@ -161,6 +321,7 @@
             to { opacity: 1; }
         }
     </style>
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
@@ -173,8 +334,15 @@
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#skills">Skills</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
+                <div class="theme-switch-wrapper">
+                    <label class="theme-switch" for="checkbox">
+                        <input type="checkbox" id="checkbox" />
+                        <div class="slider round"></div>
+                    </label>
+                </div>
             </nav>
         </div>
     </header>
@@ -183,11 +351,13 @@
         <section id="home" class="hero">
             <div class="container">
                 <div class="hero-content">
+                    <img src="/api/placeholder/200/200" alt="Pradip Waghmare" class="hero-image">
                     <h1>Pradip Waghmare</h1>
                     <p>Senior Frontend Developer with 10+ years of experience in niche and disruptive technologies</p>
                     <a href="#" class="cta-button">Download Resume</a>
                 </div>
             </div>
+            <div id="lottie-background"></div>
         </section>
 
         <section id="about" class="section">
@@ -264,29 +434,106 @@
             </div>
         </section>
 
-        <section id="skills" class="section">
+       <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Frontend Technologies</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Angular</span>
+                        <span class="skill-item">JavaScript</span>
+                        <span class="skill-item">TypeScript</span>
+                        <span class="skill-item">HTML5</span>
+                        <span class="skill-item">CSS3</span>
+                        <span class="skill-item">React</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Backend & Databases</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Node.js</span>
+                        <span class="skill-item">Express.js</span>
+                        <span class="skill-item">MongoDB</span>
+                        <span class="skill-item">MySQL</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools & Practices</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Git</span>
+                        <span class="skill-item">Jira</span>
+                        <span class="skill-item">Agile Methodologies</span>
+                        <span class="skill-item">CI/CD</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Soft Skills</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Team Leadership</span>
+                        <span class="skill-item">Project Management</span>
+                        <span class="skill-item">Problem Solving</span>
+                        <span class="skill-item">Communication</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+                <section id="testimonials" class="section">
             <div class="container">
-                <h2 class="section-title">Skills</h2>
-                <!-- Skills content will go here -->
+                <h2 class="section-title">Testimonials</h2>
+                <div class="testimonials">
+                    <div class="testimonial">
+                        <p>"Pradip is an exceptional frontend developer. His expertise in Angular and attention to detail made our project a huge success."</p>
+                        <span class="testimonial-author">- John Doe, Project Manager</span>
+                    </div>
+                    <div class="testimonial">
+                        <p>"Working with Pradip was a pleasure. His ability to solve complex problems and lead the team was instrumental in delivering our product on time."</p>
+                        <span class="testimonial-author">- Jane Smith, CTO</span>
+                    </div>
+                    <div class="testimonial">
+                        <p>"Pradip's knowledge of blockchain technologies and frontend development is impressive. He's a valuable asset to any development team."</p>
+                        <span class="testimonial-author">- Mike Johnson, Senior Developer</span>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section id="contact" class="section">
-            <div class="container">
-                <h2 class="section-title">Contact</h2>
-                <!-- Contact content will go here -->
+       <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Contact</h2>
+            <div class="contact-info">
+                <p>Email: waghmarepb@outlook.com</p>
+                <p>Phone: +91 9284362638</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/your-profile" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/your-username" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://your-portfolio-website.com" target="_blank"><i class="fas fa-globe"></i></a>
+                </div>
             </div>
-        </section>
+        </div>
+    </section>
     </main>
 
+  
     <footer>
         <div class="container">
-            <!-- Footer content will go here -->
+            <p>&copy; 2024 Pradip Waghmare. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
-        // JavaScript for smooth scrolling and other interactive elements will go here
+       // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Add more JavaScript for interactivity here
     </script>
 </body>
 </html>
