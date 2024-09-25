@@ -7,6 +7,11 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
         
+/* Add transitions for smooth color changes */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
        :root {
             --primary-color: #fe5632;
             --text-color: #333;
@@ -233,7 +238,7 @@
         }
         
         .skill-category {
-            background-color: #f9f9f9;
+            background-color: var(--secondary-bg);
             border-radius: 8px;
             padding: 20px;
             width: calc(50% - 10px);
@@ -534,6 +539,35 @@
         });
         
         // Add more JavaScript for interactivity here
+        function setTheme(themeName) {
+    localStorage.setItem('theme', themeName);
+    document.documentElement.setAttribute('data-theme', themeName);
+}
+
+// Function to toggle between light and dark theme
+function toggleTheme() {
+    if (localStorage.getItem('theme') === 'dark') {
+        setTheme('light');
+    } else {
+        setTheme('dark');
+    }
+}
+
+// Immediately invoked function to set the theme on initial load
+(function () {
+    if (localStorage.getItem('theme') === 'dark') {
+        setTheme('dark');
+        document.getElementById('checkbox').checked = true;
+    } else {
+        setTheme('light');
+        document.getElementById('checkbox').checked = false;
+    }
+})();
+
+// Event listener for the theme toggle
+document.getElementById('checkbox').addEventListener('change', function() {
+    toggleTheme();
+});
     </script>
 </body>
 </html>
