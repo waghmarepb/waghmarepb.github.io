@@ -325,6 +325,112 @@
             from { opacity: 0; }
             to { opacity: 1; }
         }
+
+        /* Responsive styles */
+@media (max-width: 768px) {
+    /* Header and navigation */
+    header {
+        padding: 10px 0;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        display: none;
+        padding-top: 10px;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .theme-switch-wrapper {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+    }
+
+    /* Mobile menu button */
+    .menu-toggle {
+        display: block;
+        font-size: 1.5rem;
+        cursor: pointer;
+        align-self: flex-end;
+    }
+
+    /* Hero section */
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .hero-image {
+        width: 150px;
+        height: 150px;
+    }
+
+    /* Sections */
+    .section {
+        padding: 40px 0;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    /* Skills */
+    .skills-container {
+        flex-direction: column;
+    }
+
+    .skill-category {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    /* Projects and Experience */
+    .project-item, .experience-item {
+        padding: 15px;
+    }
+
+    /* Testimonials */
+    .testimonials {
+        flex-direction: column;
+    }
+
+    .testimonial {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    /* Contact */
+    .contact-info {
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .cta-button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
     </style>
     <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
 </head>
@@ -333,6 +439,7 @@
         <div class="container">
             <nav>
                 <h1>PW</h1>
+                <div class="menu-toggle">☰</div>
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
@@ -351,7 +458,6 @@
             </nav>
         </div>
     </header>
-
     <main>
         <section id="home" class="hero">
             <div class="container">
@@ -567,6 +673,20 @@ function toggleTheme() {
 // Event listener for the theme toggle
 document.getElementById('checkbox').addEventListener('change', function() {
     toggleTheme();
+});
+// Mobile menu toggle
+const menuToggle = document.querySelector('.menu-toggle');
+const navUl = document.querySelector('nav ul');
+
+menuToggle.addEventListener('click', () => {
+    navUl.classList.toggle('show');
+});
+
+// Close menu when a link is clicked
+document.querySelectorAll('nav ul li a').forEach(link => {
+    link.addEventListener('click', () => {
+        navUl.classList.remove('show');
+    });
 });
     </script>
 </body>
