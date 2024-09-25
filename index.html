@@ -419,6 +419,23 @@
     .contact-info {
         padding: 0 20px;
     }
+    /* Hide theme switch on mobile */
+    .theme-switch-wrapper {
+        display: none;
+    }
+
+    /* Adjust header layout */
+    nav {
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* Mobile menu button */
+    .menu-toggle {
+        display: block;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
 }
 
 @media (max-width: 480px) {
@@ -429,6 +446,23 @@
     .cta-button {
         padding: 10px 20px;
         font-size: 0.9rem;
+    }
+    /* Hide theme switch on mobile */
+    .theme-switch-wrapper {
+        display: none;
+    }
+
+    /* Adjust header layout */
+    nav {
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* Mobile menu button */
+    .menu-toggle {
+        display: block;
+        font-size: 1.5rem;
+        cursor: pointer;
     }
 }
     </style>
@@ -688,6 +722,25 @@ document.querySelectorAll('nav ul li a').forEach(link => {
         navUl.classList.remove('show');
     });
 });
+    
+    // Function to get the user's theme preference
+function getThemePreference() {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        return savedTheme;
+    }
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
+
+// Set the initial theme
+function setInitialTheme() {
+    const theme = getThemePreference();
+    setTheme(theme);
+    document.getElementById('checkbox').checked = theme === 'dark';
+}
+
+// Call this function when the page loads
+document.addEventListener('DOMContentLoaded', setInitialTheme);
     </script>
 </body>
 </html>
