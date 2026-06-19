@@ -273,7 +273,6 @@
         initNav();
         initMobileMenu();
         initTilt();
-        initTestimonials();
         initSmoothScroll();
 
         window.addEventListener('load', () => {

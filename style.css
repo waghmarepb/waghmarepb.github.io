@@ -820,6 +820,16 @@ main {
     .projects-grid {
         grid-template-columns: repeat(3, 1fr);
     }
+
+    .projects-grid--wide {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1200px) {
+    .projects-grid--wide {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 .project-card {
@@ -960,7 +970,46 @@ main {
     transform: translateY(-2px);
 }
 
-/* ---- Testimonials ---- */
+/* ---- Certificates ---- */
+.certificates-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+@media (min-width: 768px) {
+    .certificates-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.certificate-card h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.certificate-card p {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+.cert-issuer {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.contact-link--resume {
+    font-weight: 500;
+}
+
+/* ---- Testimonials (legacy) ---- */
 .testimonials-slider {
     overflow: hidden;
 }
