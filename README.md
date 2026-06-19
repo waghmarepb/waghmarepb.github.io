@@ -1,33 +1,49 @@
-Pradip Waghmare - Portfolio
-Welcome to my personal portfolio website repository! This website showcases my professional experience, skills, and projects as a Frontend Developer, with a focus on Angular development and related technologies.
+# Pradip Waghmare — Motion Portfolio
 
-Live Website
-waghmarepb.github.io
+A cinematic, motion-rich personal portfolio inspired by premium motion design — built as a static site for [GitHub Pages](https://waghmarepb.github.io).
 
-About Me
-I am Pradip Waghmare, a Frontend Developer with over 6 years of experience in Angular development. My expertise includes building rich, responsive web applications with smooth animations and an intuitive user experience.
+## Live Website
 
-Features
-Resume-based Design: This portfolio is crafted from the details of my resume, ensuring all key information is presented clearly and attractively.
-Technologies Used:
-HTML5, CSS3, JavaScript: Core technologies for web development, creating a responsive and interactive design.
-AOS (Animate On Scroll): Used for smooth scroll animations to enhance the user experience.
-Lottie Files: Integrated for eye-catching animations, adding a dynamic feel to the site.
-Custom Color Scheme: A combination of white and #fe5632 as my primary color palette for a clean and modern design.
-Projects
-Here are a few projects that I've worked on, which are also displayed on my portfolio:
+**[waghmarepb.github.io](https://waghmarepb.github.io)**
 
-How to Use
-To view this portfolio locally:
+## About
 
-Clone the repository:
-bash
-Copy code
+I'm **Pradip Waghmare**, a Senior Frontend Developer with 10+ years of experience building scalable, animation-rich web applications — from enterprise Angular apps to blockchain platforms.
+
+## Features
+
+- **Cinematic hero** — Staggered text reveals, floating profile cards, animated stats
+- **Particle network background** — Canvas-driven ambient motion
+- **GSAP scroll animations** — Smooth section reveals on scroll
+- **Custom cursor** — Magnetic hover effects on desktop
+- **3D project cards** — Interactive tilt on hover
+- **Glassmorphism UI** — Modern frosted-glass cards and navigation
+- **Dark / Light theme** — Toggle with system preference detection
+- **Fully responsive** — Mobile-first with slide-out navigation
+- **Accessibility** — Respects `prefers-reduced-motion`
+
+## Tech Stack
+
+- HTML5, CSS3, Vanilla JavaScript
+- [GSAP](https://greensock.com/gsap/) + ScrollTrigger (via CDN)
+- Google Fonts — Syne & DM Sans
+- Zero build step — deploys directly to GitHub Pages
+
+## Local Development
+
+```bash
 git clone https://github.com/waghmarepb/waghmarepb.github.io.git
-Open the index.html file in your browser.
-Contact
-Feel free to reach out if you'd like to collaborate or have any questions:
+cd waghmarepb.github.io
+# Open index.html in your browser, or use a local server:
+npx serve .
+```
 
-Email: waghmarepb@outlook.com
-LinkedIn: https://www.linkedin.com/in/waghmarepb
-GitHub: @waghmarepb
+## Deploy
+
+Push to the `master` branch — GitHub Pages serves automatically from the repo root.
+
+## Contact
+
+- **Email:** waghmarepb@outlook.com
+- **LinkedIn:** [linkedin.com/in/waghmarepb](https://www.linkedin.com/in/waghmarepb)
+- **GitHub:** [@waghmarepb](https://github.com/waghmarepb)
